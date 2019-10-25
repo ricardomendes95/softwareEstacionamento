@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Entrada" language="groovy" pageWidth="226" pageHeight="226" columnWidth="186" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fa192e08-4836-490d-b632-189573474086">
+	<property name="ireport.zoom" value="3.0"/>
+	<property name="ireport.x" value="31"/>
+	<property name="ireport.y" value="251"/>
+	<field name="nomeEmpresa" class="java.lang.String"/>
+	<field name="cnpj" class="java.lang.String"/>
+	<field name="endereco" class="java.lang.String"/>
+	<field name="telefone" class="java.lang.String"/>
+	<field name="dataEntrada" class="java.lang.String"/>
+	<field name="horaEntrada" class="java.lang.String"/>
+	<field name="placa" class="java.lang.String"/>
+	<field name="valPrimeiraHora" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="26" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="6" width="186" height="20" uuid="156ef585-2dda-4739-9c73-08f590e86b72"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nomeEmpresa}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="36" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="186" height="12" uuid="862de03f-b7f7-4e83-af64-476c0d76473b"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cnpj}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="11" width="186" height="13" uuid="e479a663-7fd8-4053-b2ba-aeccf16e9e4e"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{endereco}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="23" width="186" height="13" uuid="633a6d7e-dd89-43c3-8a68-124e4c299494"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{telefone}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="69" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="10" width="186" height="21" uuid="cf82fb9f-2abe-48ff-bb44-c9d6056cebd3"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dataEntrada}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="30" width="186" height="20" uuid="eb13e37a-a457-442d-a000-c47d6f6299a2"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{horaEntrada}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="49" width="186" height="20" uuid="cbdc79e1-d215-4652-b76e-1a6d4fdc30d4"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="16"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{placa}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="35" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="186" height="20" uuid="8b0c3b46-cc35-463a-ad64-40a7be8ac099"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{valPrimeiraHora}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="20" width="186" height="13" uuid="d2412fa9-8de7-44bd-a545-be5754b857e4"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Agradecemos a preferência!]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="7" splitType="Stretch">
+			<break>
+				<reportElement x="0" y="3" width="186" height="1" uuid="03a02af6-8784-480d-869f-ab65045c4bf5"/>
+			</break>
+		</band>
+	</summary>
+</jasperReport>

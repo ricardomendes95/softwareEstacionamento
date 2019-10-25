@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8.0.999-ea" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@css/Patio.css" fx:controller="view.controller.PatioController">
+   <children>
+      <AnchorPane fx:id="pane" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #BEBEBE; -fx-border-radius: 5; -fx-background-radius: 5; -fx-background-color: #E0FFFF;" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="40.0">
+         <children>
+            <TableView fx:id="tableEstacione" prefHeight="330.0" prefWidth="532.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="50.0">
+              <columns>
+                <TableColumn fx:id="placaCol" prefWidth="75.0" text="Placa" />
+                <TableColumn fx:id="modeloCol" prefWidth="75.0" text="Modelo" />
+                  <TableColumn fx:id="entradaCol" prefWidth="75.0" styleClass="-fx-border-color" text="Hora Entrada" />
+                  <TableColumn fx:id="tempoCol" prefWidth="75.0" text="Tempo Percorrido" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

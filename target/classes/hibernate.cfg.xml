@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+        <property name="dialect">com.enigmabridge.hibernate.dialect.SQLiteDialect</property>
+        <property name="connection.driver_class">org.sqlite.JDBC</property>
+        <property name="connection.url">jdbc:sqlite:C:/sqlite/softpark.db</property>
+        <property name="connection.username"></property>
+        <property name="connection.password"></property>
+
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <mapping class="com.softpark.model.Saida"/>
+        <mapping class="com.softpark.model.Entrada"/>
+        <mapping class="com.softpark.model.Categoria"/>
+        <mapping class="com.softpark.model.Configuracao"/>
+        <mapping class="com.softpark.model.Precos"/>
+        <mapping class="com.softpark.model.Usuario"/>
+    </session-factory>
+</hibernate-configuration>
