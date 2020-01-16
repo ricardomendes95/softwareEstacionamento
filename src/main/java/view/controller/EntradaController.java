@@ -18,10 +18,7 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.effect.BlurType;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.layout.AnchorPane;
@@ -37,6 +34,8 @@ import java.text.DecimalFormatSymbols;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
+
+import static org.bouncycastle.crypto.tls.ContentType.alert;
 
 public class EntradaController implements Initializable {
 
@@ -87,11 +86,12 @@ public class EntradaController implements Initializable {
         getHour();
         txtformatPlaca();
         preencherCombo();
-        Platform.runLater(()->{
-            System.out.println(anchorPrincipal.getHeight());
-            System.out.println(anchorPrincipal.getWidth());
-        });
+        Platform.runLater(()->focus());
         comboSelectCarro();
+    }
+
+    public void focus(){
+        txtPlaca.requestFocus();
     }
 
     private void txtformatPlaca(){
@@ -148,7 +148,16 @@ public class EntradaController implements Initializable {
             double prefSum = anchorPrincipal.getPrefHeight() + anchorPrincipal.getPrefWidth();
             LabelFormater.resizeComponents(width, heigth, prefSum,lblData,lblHora,lblCategoria,lblPlaca,txtData,txtHora,txtPlaca );
         }catch (Exception e){
+            e.printStackTrace();
         }
+    }
+
+    private void alert(String title, String header, String text){
+        Alert dialogoInfo = new Alert(Alert.AlertType.INFORMATION);
+        dialogoInfo.setTitle(title);
+        dialogoInfo.setHeaderText(header);
+        dialogoInfo.setContentText(text);
+        dialogoInfo.showAndWait();
     }
 
     public void btnCancel(ActionEvent actionEvent) {
@@ -166,6 +175,7 @@ public class EntradaController implements Initializable {
     public void btnLimpar(ActionEvent actionEvent) {
     txtPlaca.setText("");
     comboSelectCarro();
+    txtPlaca.requestFocus();
     }
 
     private void preencherCombo(){
@@ -230,7 +240,7 @@ public class EntradaController implements Initializable {
         try {
             new ImprimirJasper().imprimirEntrada(lista);
         } catch (Exception e) {
-            e.printStackTrace();
+            alert("Erro!","Erro na tentativa de impressão!", "erro: "+e.getMessage()+", "+e.getCause()+", "+ e+", "+e.getStackTrace());
         }
         }
     }

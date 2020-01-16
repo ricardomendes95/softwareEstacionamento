@@ -8,6 +8,7 @@ public class EntradaPrint {
         return nomeEmpresa;
     }
 
+
     public void setNomeEmpresa(String nomeEmpresa) {
         this.nomeEmpresa = nomeEmpresa;
     }

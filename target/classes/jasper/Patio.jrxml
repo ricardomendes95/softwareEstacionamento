@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Entrada" language="groovy" pageWidth="226" pageHeight="226" columnWidth="186" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isIgnorePagination="true" uuid="fa192e08-4836-490d-b632-189573474086">
+	<property name="ireport.zoom" value="3.0000000000000013"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="nomeEmpresa" class="java.lang.String"/>
+	<field name="cnpj" class="java.lang.String"/>
+	<field name="endereco" class="java.lang.String"/>
+	<field name="telefone" class="java.lang.String"/>
+	<field name="placa" class="java.lang.String"/>
+	<field name="categoria" class="java.lang.String"/>
+	<field name="total" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="26" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="6" width="186" height="20" uuid="156ef585-2dda-4739-9c73-08f590e86b72"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nomeEmpresa}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="19" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="186" height="18" uuid="97fddcca-a9b0-449f-ba8c-8b862cb96879"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[RELATÓRIO DO PÁTIO]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="94" height="20" uuid="cbdc79e1-d215-4652-b76e-1a6d4fdc30d4"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{placa}]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement x="94" y="0" width="92" height="20" uuid="b916f44c-f633-495d-a83e-e7a3a9500d4c"/>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{categoria}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="16" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="2" width="128" height="13" uuid="d2412fa9-8de7-44bd-a545-be5754b857e4"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Total de Veículos no Pátio: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="128" y="2" width="58" height="13" uuid="32339836-ebd7-44f2-a823-ae6f14ab8b80"/>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="7" splitType="Stretch">
+			<break>
+				<reportElement x="0" y="3" width="186" height="1" uuid="33421335-e213-46ed-b9ff-25d5d478aa4b"/>
+			</break>
+		</band>
+	</summary>
+</jasperReport>

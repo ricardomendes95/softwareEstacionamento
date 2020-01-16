@@ -129,7 +129,7 @@ public class Index extends Application {
         gridPane.setVgap(5);
 
         //Implementing Nodes for GridPane
-        Label lblUserName = new Label("Usuário:");
+        Label lblUserName = new Label("Username");
         final ComboBox<Usuario> txtUserName = new ComboBox<>();
 
         try {
@@ -139,7 +139,7 @@ public class Index extends Application {
             e.printStackTrace();
         }
         txtUserName.getSelectionModel().select(0);
-        Label lblPassword = new Label("Senha:");
+        Label lblPassword = new Label("Password");
         final PasswordField pf = new PasswordField();
 
         Button btnLogin = new Button("Login");

@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="768.0" prefWidth="1366.0" xmlns="http://javafx.com/javafx/8.0.999-ea" xmlns:fx="http://javafx.com/fxml/1" stylesheets="@css/Patio.css" fx:controller="view.controller.PatioController">
+<AnchorPane prefHeight="768.0" prefWidth="1366.0" stylesheets="@css/Patio.css" xmlns="http://javafx.com/javafx/8.0.999-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.controller.PatioController">
    <children>
       <AnchorPane fx:id="pane" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: #BEBEBE; -fx-border-radius: 5; -fx-background-radius: 5; -fx-background-color: #E0FFFF;" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="60.0" AnchorPane.topAnchor="40.0">
          <children>
@@ -19,6 +21,11 @@
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                </columnResizePolicy>
             </TableView>
+            <JFXButton fx:id="btnImprimir" buttonType="RAISED" mnemonicParsing="false" onAction="#btnImprimir" prefHeight="35.0" prefWidth="243.0" style="-fx-background-color: #B0E0E6;" text="Imprimir Lista de veículos" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="60.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </JFXButton>
          </children>
       </AnchorPane>
    </children>

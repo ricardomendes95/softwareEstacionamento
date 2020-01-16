@@ -238,15 +238,11 @@ public class CategoriaController implements Initializable {
 
     @FXML
     public void btnSalvar(ActionEvent actionEvent) {
-        System.out.println("clickou salvar");
             if (ValidationFields.checkEmptyFields(txtNome, txtTolerancia)) {
-
                 if(precos.isEmpty()){
                     alert("Atenção!","Impossivel prosseguir!","Adicione valores das horas antes de prosseguir.");
                 }else {
-                    System.out.println("começando a verificação!");
                     if (categoriaTemp == null) {
-                        System.out.println("criando um categoria");
                         categoria.setNome(txtNome.getText());
                         categoria.setTolerancia(Integer.valueOf(txtTolerancia.getText()));
                         categoria.setListaCodBarras(precos);
@@ -254,7 +250,6 @@ public class CategoriaController implements Initializable {
 
 
                     } else {
-                        System.out.println("atualizando uma categoria");
                         categoriaTemp.getValue().setNome(txtNome.getText());
                         categoriaTemp.getValue().setTolerancia(Integer.parseInt(txtTolerancia.getText()));
                         Categoria cat = categoriaTemp.getValue();
